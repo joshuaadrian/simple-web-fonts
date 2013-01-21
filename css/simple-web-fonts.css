@@ -1,0 +1,210 @@
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#wpcf-marketing, .editform {
+	display:none !important;
+}
+
+#user_show_permissions, #user_prod_permissions {
+	width: 25em;
+}
+
+.swf-loader {
+	position: relative;
+top: 4px;
+margin-left: 5px;
+}
+
+.menu_swf {
+	margin-right:5px;
+}
+
+.swf_pagination {
+	margin: 40px 0 0 20px;
+}
+
+.swf_pagination li {
+	float:left;
+	margin:0 10px -1px 0;
+	padding:15px;
+	border-left:1px solid #aaa;
+	border-top:1px solid #aaa;
+	border-right:1px solid #aaa;
+	border-bottom:1px solid #aaa;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color:  #fff
+}
+
+.swf_pagination li.swf-active {
+	background-color: #f5f5f5;
+	border-bottom:1px solid #f5f5f5;
+	box-shadow: 1px -1px 2px #ddd;
+}
+
+.swf_pagination li a {
+	display: block;
+	padding:0 0 0 30px;
+	text-decoration: none;
+	font-weight: bold;
+	color:#ccc;
+	height:24px;
+	line-height: 24px;
+	background:url(../images/swf-sprite.png) 0px 0px no-repeat;
+}
+
+.swf_pagination li.swf-active a {
+	color:#8a8a8a;
+}
+
+.swf_pagination li#swf-pagination-twitter a {
+	background-position: 0px -71px;
+}
+
+.swf_pagination li#swf-pagination-facebook a {
+	background-position: 0px -24px;
+}
+
+.swf_pagination li#swf-pagination-instagram a {
+	background-position: 0px -118px;
+}
+
+.swf_pagination li#swf-pagination-usage a {
+	background-position: 0px -165px;
+}
+
+.swf_pagination li#swf-pagination-settings a {
+	background-position: 0px -212px;
+}
+
+.swf_pagination li.swf-active#swf-pagination-twitter a {
+	background-position: 0px -47px;
+}
+
+.swf_pagination li.swf-active#swf-pagination-facebook a {
+	background-position: 0px 0px;
+}
+
+.swf_pagination li.swf-active#swf-pagination-instagram a {
+	background-position: 0px -94px;
+}
+
+.swf_pagination li.swf-active#swf-pagination-usage a {
+	background-position: 0px -141px;
+}
+
+.swf_pagination li.swf-active#swf-pagination-settings a {
+	background-position: 0px -188px;
+}
+
+.swf_content {
+	border-top:1px solid #999;
+	border-left:1px solid #999;
+	border-right:1px solid #999;
+	margin:0;
+	padding:20px 0 40px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-image: linear-gradient(bottom, rgb(230,230,230) 20%, rgb(245,245,245) 80%);
+	background-image: -o-linear-gradient(bottom, rgb(230,230,230) 20%, rgb(245,245,245) 80%);
+	background-image: -moz-linear-gradient(bottom, rgb(230,230,230) 20%, rgb(245,245,245) 80%);
+	background-image: -webkit-linear-gradient(bottom, rgb(230,230,230) 20%, rgb(245,245,245) 80%);
+	background-image: -ms-linear-gradient(bottom, rgb(230,230,230) 20%, rgb(245,245,245) 80%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.2, rgb(230,230,230)),
+		color-stop(0.8, rgb(245,245,245))
+	);
+}
+
+.swf_content li {
+	display: none;
+	padding:0;
+	margin:0;
+}
+
+.swf_content li.swf-active {
+	display: block;
+}
+
+.swf_content .form-table th {
+	padding: 10px 10px 10px 20px;
+}
+
+.swf_content textarea, .swf_content input[type="text"], .swf_content input[type="password"], .swf_content input[type="file"], .swf_content input[type="button"], .swf_content input[type="submit"], .swf_content input[type="reset"], .swf_content input[type="email"], .swf_content input[type="number"], .swf_content input[type="search"], .swf_content input[type="tel"], .swf_content input[type="url"], .swf_content select {
+	border-color: #aaa;
+}
+
+.swf-copy {
+	padding:0 20px;
+}
+
+#swf-font-sizing a {
+	float:right;
+	margin-left:10px;
+}
+
+.swf_content h3 {
+	padding-top:20px;
+}
+
+.swf_content code {
+	padding:5px;
+	background-color: #fff;
+	border:1px solid #aaa;
+}
+
+.swf-font-preview {
+	font-size: 20px;
+	line-height: 1.5;
+	padding:10px 20px;
+	background-color: #fff;
+	border:1px solid #aaa;
+}
+
+.swf-font-preview p {
+
+}
+
+.swf-font-preview p input {
+	margin-right:10px;
+	vertical-align: baseline;
+}
+
+#simple-web-fonts-options-form p.submit {
+	border: 1px solid #999;
+	text-align: right;
+	margin:0;
+	padding:20px;
+	display: block;
+	background-color: #ccc;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.credits {
+	margin-top: 40px;
+	border-top: 1px solid #ccc;
+}
+
+.credits p {
+	height:40px;
+	line-height: 100%;
+}
