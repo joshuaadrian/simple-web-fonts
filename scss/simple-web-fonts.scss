@@ -4,18 +4,10 @@
   clear: both;
 }
 
-#wpcf-marketing, .editform {
-	display:none !important;
-}
-
-#user_show_permissions, #user_prod_permissions {
-	width: 25em;
-}
-
-.loader {
+.swf-loader {
 	position: relative;
-	top:-40px;
-	margin:0 0 0 4px;
+top: 4px;
+margin-left: 5px;
 }
 
 .menu_swf {
@@ -76,7 +68,7 @@
 	background-position: 0px -118px;
 }
 
-.swf_pagination li#swf-pagination-help a {
+.swf_pagination li#swf-pagination-usage a {
 	background-position: 0px -165px;
 }
 
@@ -96,7 +88,7 @@
 	background-position: 0px -94px;
 }
 
-.swf_pagination li.swf-active#swf-pagination-help a {
+.swf_pagination li.swf-active#swf-pagination-usage a {
 	background-position: 0px -141px;
 }
 
@@ -152,9 +144,36 @@
 	padding:0 20px;
 }
 
+#swf-font-sizing a {
+	float:right;
+	margin-left:10px;
+}
+
+.swf_content h3 {
+	padding-top:20px;
+}
+
+.swf_content code {
+	padding:5px;
+	background-color: #fff;
+	border:1px solid #aaa;
+}
+
 .swf-font-preview {
 	font-size: 20px;
 	line-height: 1.5;
+	padding:10px 20px;
+	background-color: #fff;
+	border:1px solid #aaa;
+}
+
+.swf-font-preview p {
+
+}
+
+.swf-font-preview p input {
+	margin-right:10px;
+	vertical-align: baseline;
 }
 
 #simple-web-fonts-options-form p.submit {

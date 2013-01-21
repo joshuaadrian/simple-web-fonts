@@ -1,5 +1,38 @@
 <?php
 
+function my_action_callback() {
+	global $wpdb; // this is how you get access to the database
+
+	$options = get_option('swf_options');
+
+	foreach($options['google_fonts'] as $font) {
+		if ($font['name'] == $_POST['font']) {
+			$available_weights;
+			foreach($font['weights'] as $weight) {
+				$available_weights .= $weight . ',';
+				echo '<p style="font-family:\''.$_POST['font'].'\'; font-weight:';
+				if (strlen($weight) > 3) {
+					echo substr($weight, 0, 3) . ';font-style:italic;';
+				} else {
+					echo $weight . ';';
+				}
+				echo '"><input name="swf_options[selected_weights][]" type="checkbox" value="'.$weight.'"';
+				foreach($options['selected_weights'] as $selected_weight) {
+					if ($font['name'] == $options['selected_font']) {
+						checked($weight, $selected_weight);
+					}
+				}
+				echo '/>'.$weight.' &ndash; Grumpy wizards make toxic brew for the evil Queen and Jack.</p>';
+			}
+			echo '<link href="http://fonts.googleapis.com/css?family='.urlencode($_POST['font']).':'.substr($available_weights, 0, -1).'" rel="stylesheet" type="text/css">';
+		}
+	}
+
+	die(); // this is required to return a proper result
+}
+
+add_action('wp_ajax_my_action', 'my_action_callback');
+
 remove_action( 'wp_head', 'rsd_link' );
 // windows live writer
 remove_action( 'wp_head', 'wlwmanifest_link' );

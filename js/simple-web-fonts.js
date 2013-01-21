@@ -11,18 +11,22 @@ jQuery(document).ready(function($) {
 		return false;
 	});
 
-	$('#swf_fonts').change(function() {
-		$("#swf_fonts").after('<img src="/wp-content/plugins/simple-web-fonts/images/ajax-loader.gif" alt="" class="loader" />');
-		var data = {
-			action: 'my_action',
-			font: $('#swf_fonts option:selected').val()
-		};
-		console.log(data);
-		$.post(ajaxurl, data, function(response) {
-			console.log(response);
-			$(".loader").remove();
-			$("#swf-font-preview").html(response);
-		});
+	var fontBase = 20;
+
+	$('#swf-smaller').click(function() {
+		if (fontBase > 12) {
+			fontBase = fontBase - 2;
+			$('.swf-font-preview').css('font-size',fontBase+'px');
+		}
+		return false;
+	});
+
+	$('#swf-larger').click(function() {
+		if (fontBase < 40) {
+			fontBase = fontBase + 2;
+			$('.swf-font-preview').css('font-size',fontBase+'px');
+		}
+		return false;
 	});
 
 });

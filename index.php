@@ -3,7 +3,7 @@
 /*
 Plugin Name: Simple Web Fonts
 Plugin URI: http://joshuaadrian.com/simple-web-fonts-plugin/
-Description: Harness the power of Twitter Bootstrap in your theme.
+Description: Simply add Google web fonts to your WordPress theme.
 Author: Joshua Adrian
 Version: 0.5.0
 Author URI: http://joshuaadrian.com
@@ -244,7 +244,7 @@ function swf_init() {
 
 // Add menu page
 function swf_add_options_page() {
-	add_options_page('Simple Web Fonts', '<img class="menu_sb" src="' . plugins_url( 'images/bootstrap.gif' , __FILE__ ) . '" alt="" />'.SWF_PLUGINOPTIONS_NICK, 'manage_options', SWF_PLUGINOPTIONS_ID, 'swf_render_form');
+	add_options_page('Simple Web Fonts', '<img class="menu_sb" src="' . plugins_url( 'images/swf-icon.gif' , __FILE__ ) . '" alt="" />'.SWF_PLUGINOPTIONS_NICK, 'manage_options', SWF_PLUGINOPTIONS_ID, 'swf_render_form');
 }
 
 // ------------------------------------------------------------------------------
@@ -457,7 +457,7 @@ function swf_plugin_enqueue() {
   wp_register_style('simple_web_fonts_css', plugins_url('/css/simple-web-fonts.css', __FILE__), false, '1.0.0');
   wp_enqueue_style('simple_web_fonts_css');
   wp_enqueue_script('simple_web_fonts_scripts', plugins_url('/js/simple-web-fonts.min.js', __FILE__), array('jquery'));
-  wp_enqueue_script('simple_web_fonts_scripts-ajax', plugins_url('/js/simple-web-fonts-ajax.js', __FILE__), array('jquery'));
+  wp_enqueue_script('simple_web_fonts_scripts-ajax', plugins_url('/js/simple-web-fonts-ajax.min.js', __FILE__), array('jquery'));
 }
 
 add_action('admin_enqueue_scripts', 'swf_plugin_enqueue');
@@ -477,39 +477,6 @@ add_action('wp_enqueue_scripts', 'swf_plugin_web_font');
 /************************************************************************/
 /* INCLUDES
 /************************************************************************/
-
-add_action('wp_ajax_my_action', 'my_action_callback');
-
-function my_action_callback() {
-	global $wpdb; // this is how you get access to the database
-
-	$options = get_option('swf_options');
-
-	foreach($options['google_fonts'] as $font) {
-		if ($font['name'] == $_POST['font']) {
-			$available_weights;
-			foreach($font['weights'] as $weight) {
-				$available_weights .= $weight . ',';
-				echo '<p style="font-family:\''.$_POST['font'].'\'; font-weight:';
-				if (strlen($weight) > 3) {
-					echo substr($weight, 0, 3) . ';font-style:italic;';
-				} else {
-					echo $weight . ';';
-				}
-				echo '"><input name="swf_options[selected_weights][]" type="checkbox" value="'.$weight.'"';
-				foreach($options['selected_weights'] as $selected_weight) {
-					if ($font['name'] == $options['selected_font']) {
-						checked($weight, $selected_weight);
-					}
-				}
-				echo '/>'.$weight.' &ndash; Grumpy wizards make toxic brew for the evil Queen and Jack.</p>';
-			}
-			echo '<link href="http://fonts.googleapis.com/css?family='.urlencode($_POST['font']).':'.substr($available_weights, 0, -1).'" rel="stylesheet" type="text/css">';
-		}
-	}
-
-	die(); // this is required to return a proper result
-}
 
 require SWF_PATH . 'inc/simple-web-fonts-functions.inc';
 
